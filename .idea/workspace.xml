@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83685a7f-be26-4b84-a580-f49a5181b3a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clinic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/clinic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/doctor/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/patient/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/patient/PatientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/PatientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/patient/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/patient/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/patient/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/doctor/Doctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/patient/Patient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/patient/PatientConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/patient/PatientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/patient/PatientRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/patient/PatientService.class" beforeDir="false" />
-    </list>
+    <list default="true" id="83685a7f-be26-4b84-a580-f49a5181b3a1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +88,7 @@
       <updated>1676519497251</updated>
       <workItem from="1676519498516" duration="13763000" />
       <workItem from="1676611144182" duration="75000" />
-      <workItem from="1676611573550" duration="7189000" />
+      <workItem from="1676611573550" duration="7259000" />
     </task>
     <servers />
   </component>
