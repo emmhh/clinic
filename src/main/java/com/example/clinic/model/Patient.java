@@ -1,8 +1,9 @@
-package com.example.clinic.patient;
+package com.example.clinic.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name="Patient")
@@ -17,25 +18,23 @@ public class Patient {
     )
     private Long pid;
     private String name;
-    private Integer age;
-    private LocalDate dob;
     private String email;
-
+    private String password;
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Doctor doctor;
+    @OneToMany(mappedBy = "patient")
+    private List<Reminder> reminders;
     public Patient() {
     }
 
-    public Patient(Long pid, String name, Integer age, LocalDate dob, String email) {
+    public Patient(Long pid, String name, String email) {
         this.pid = pid;
         this.name = name;
-        this.age = age;
-        this.dob = dob;
         this.email = email;
     }
     //    db will generate id for us
-    public Patient(String name, Integer age, LocalDate dob, String email) {
+    public Patient(String name, String email) {
         this.name = name;
-        this.age = age;
-        this.dob = dob;
         this.email = email;
     }
 
@@ -55,22 +54,6 @@ public class Patient {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public LocalDate getDob() {
-        return dob;
-    }
-
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -84,8 +67,6 @@ public class Patient {
         return "Patient{" +
                 "pid=" + pid +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", dob=" + dob +
                 ", email='" + email + '\'' +
                 '}';
     }
