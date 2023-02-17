@@ -9,20 +9,24 @@ import java.util.List;
 @Table(name="Patient")
 public class Patient {
     @Id
-    @SequenceGenerator(name = "patient",
-            sequenceName = "patient",
-            allocationSize = 1)
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "patient"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pid;
     private String name;
+    @Column(unique = true, nullable = false)
     private String email;
     private String password;
     @ManyToOne(fetch=FetchType.LAZY)
     private Doctor doctor;
-    @OneToMany(mappedBy = "patient")
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Reminder> reminders;
     public Patient() {
     }
@@ -36,6 +40,13 @@ public class Patient {
     public Patient(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public Patient(String name, String email, String password, Doctor doctor) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.doctor = doctor;
     }
 
     public Long getPid() {

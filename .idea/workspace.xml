@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83685a7f-be26-4b84-a580-f49a5181b3a1" name="Changes" comment="" />
+    <list default="true" id="83685a7f-be26-4b84-a580-f49a5181b3a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/DoctorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/ReminderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/64359800-3089-450f-a64e-d55e84cb561f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/64359800-3089-450f-a64e-d55e84cb561f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/ClinicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/ClinicApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/PatientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/PatientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/config/PatientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/config/PatientConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Reminder.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -60,6 +74,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.55172414",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "75371e7e4287a757bf721d999f0e75d5",
     "vue.rearranger.settings.migration": "true"
   },
@@ -89,6 +104,7 @@
       <workItem from="1676519498516" duration="13763000" />
       <workItem from="1676611144182" duration="75000" />
       <workItem from="1676611573550" duration="7259000" />
+      <workItem from="1676649121625" duration="10779000" />
     </task>
     <servers />
   </component>

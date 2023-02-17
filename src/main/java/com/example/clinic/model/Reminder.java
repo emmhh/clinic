@@ -9,11 +9,7 @@ import java.time.Period;
 @Table(name="Reminder")
 public class Reminder {
     @Id
-    @SequenceGenerator(
-            name="controller",
-            sequenceName = "controller",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rid;
     private String txt;
     private Time time_stamp;
