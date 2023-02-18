@@ -2,7 +2,7 @@ package com.example.clinic.model;
 
 import jakarta.persistence.*;
 
-import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.Period;
 
 @Entity
@@ -12,12 +12,15 @@ public class Reminder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rid;
     private String txt;
-    private Time time_stamp;
-    private Boolean status;
-//    outdated is updated and managed in backend
-    private Boolean outdated;
+
+//    , insertable = true, updatable = true
+    @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Timestamp timestamp;
+    private Boolean completed;
+    //    outdated is updated and managed in backend
+    private Boolean outdated = false;
     private Period duration;
-    private String priority;
+    private Integer priority = 0;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="did")
     private Doctor doctor;
@@ -27,12 +30,17 @@ public class Reminder {
 
     public Reminder() {
     }
-
-    public Reminder(Long rid, String txt, Time time_stamp, Boolean status, Boolean outdated, Period duration, String priority, Doctor doctor, Patient patient) {
+    public Reminder(String txt, Boolean completed, Boolean outdated, Period duration, Integer priority) {
+        this.txt = txt;
+        this.completed = completed;
+        this.outdated = outdated;
+        this.duration = duration;
+        this.priority = priority;
+    }
+    public Reminder(Long rid, String txt, Boolean completed, Boolean outdated, Period duration, Integer priority, Doctor doctor, Patient patient) {
         this.rid = rid;
         this.txt = txt;
-        this.time_stamp = time_stamp;
-        this.status = status;
+        this.completed = completed;
         this.outdated = outdated;
         this.duration = duration;
         this.priority = priority;
@@ -40,10 +48,9 @@ public class Reminder {
         this.patient = patient;
     }
 
-    public Reminder(String txt, Time time_stamp, Boolean status, Boolean outdated, Period duration, String priority, Doctor doctor, Patient patient) {
+    public Reminder(String txt, Boolean completed, Boolean outdated, Period duration, Integer priority, Doctor doctor, Patient patient) {
         this.txt = txt;
-        this.time_stamp = time_stamp;
-        this.status = status;
+        this.completed = completed;
         this.outdated = outdated;
         this.duration = duration;
         this.priority = priority;
@@ -67,20 +74,17 @@ public class Reminder {
         this.txt = txt;
     }
 
-    public Time getTime_stamp() {
-        return time_stamp;
+    // timestamp not changeable so no setter for this attribute
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
-    public void setTime_stamp(Time time_stamp) {
-        this.time_stamp = time_stamp;
+    public Boolean getCompleted() {
+        return completed;
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
     }
 
     public Boolean getOutdated() {
@@ -99,11 +103,11 @@ public class Reminder {
         this.duration = duration;
     }
 
-    public String getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
     }
 
@@ -121,5 +125,8 @@ public class Reminder {
 
     public void setPatient(Patient patient) {
         this.patient = patient;
+    }
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }

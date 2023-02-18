@@ -15,18 +15,4 @@ import static java.time.Month.JANUARY;
 @Order
 @Configuration
 public class PatientConfig {
-//    @Bean
-//    CommandLineRunner commandLineRunner(PatientRepository repository){
-//        return args-> {
-//            Patient marv = new Patient(1L,
-//                    "marv",
-//                    "marv@gmail.com");
-//            Patient alex = new Patient(1L,
-//                    "Alex",
-//                    "Alex@gmail.com");
-//            repository.saveAll(
-//                    List.of(marv, alex)
-//            );
-//        };
-//    }
 }

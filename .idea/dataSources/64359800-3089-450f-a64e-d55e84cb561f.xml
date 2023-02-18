@@ -1123,7 +1123,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="306" parent="303" name="did">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>501</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1160,7 +1160,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>UK_jdtgexk368pq6d2yb3neec59d</UnderlyingIndexName>
     </key>
     <column id="314" parent="304" name="pid">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>20001</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1210,29 +1210,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>UK_bawli8xm92f30ei6x9p3h8eju</UnderlyingIndexName>
     </key>
     <column id="325" parent="305" name="rid">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>7801</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="326" parent="305" name="duration">
-      <DasType>varbinary(255)|0s</DasType>
+    <column id="326" parent="305" name="completed">
+      <DasType>bit(1)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="327" parent="305" name="outdated">
-      <DasType>bit(1)|0s</DasType>
+    <column id="327" parent="305" name="duration">
+      <DasType>varbinary(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="328" parent="305" name="priority">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="328" parent="305" name="outdated">
+      <DasType>bit(1)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="329" parent="305" name="status">
-      <DasType>bit(1)|0s</DasType>
+    <column id="329" parent="305" name="priority">
+      <DasType>int|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="330" parent="305" name="time_stamp">
-      <DasType>time|0s</DasType>
+    <column id="330" parent="305" name="timestamp">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>6</Position>
     </column>
     <column id="331" parent="305" name="txt">

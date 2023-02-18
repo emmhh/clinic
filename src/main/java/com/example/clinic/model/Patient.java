@@ -26,6 +26,18 @@ public class Patient {
         this.password = password;
     }
 
+    public void setReminders(List<Reminder> reminders) {
+        this.reminders = reminders;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public List<Reminder> getReminders() {
+        return reminders;
+    }
+
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Reminder> reminders;
     public Patient() {
