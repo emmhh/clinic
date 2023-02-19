@@ -1,6 +1,9 @@
 package com.example.clinic.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -16,8 +19,12 @@ public class Patient {
     private String email;
     private String password;
     @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="did")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private Doctor doctor;
-
+//    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+//    private List<Reminder> reminders;
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
@@ -26,20 +33,18 @@ public class Patient {
         this.password = password;
     }
 
-    public void setReminders(List<Reminder> reminders) {
-        this.reminders = reminders;
-    }
+//    public void setReminders(List<Reminder> reminders) {
+//        this.reminders = reminders;
+//    }
 
     public Doctor getDoctor() {
         return doctor;
     }
 
-    public List<Reminder> getReminders() {
-        return reminders;
-    }
+//    public List<Reminder> getReminders() {
+//        return reminders;
+//    }
 
-    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
-    private List<Reminder> reminders;
     public Patient() {
     }
 

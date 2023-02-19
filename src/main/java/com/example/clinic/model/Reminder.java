@@ -1,6 +1,9 @@
 package com.example.clinic.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.sql.Timestamp;
 import java.time.Period;
@@ -23,9 +26,13 @@ public class Reminder {
     private Integer priority = 0;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="did")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private Doctor doctor;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="pid")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private Patient patient;
 
     public Reminder() {

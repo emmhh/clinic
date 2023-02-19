@@ -1,8 +1,10 @@
 package com.example.clinic.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import com.example.clinic.model.Patient;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.List;
 
@@ -17,9 +19,11 @@ public class Doctor {
     private String email;
     private String password;
     @OneToMany(mappedBy="doctor", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Patient> patients;
 
     @OneToMany(mappedBy="doctor", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Reminder> reminders;
 
     public Doctor() {
@@ -29,7 +33,9 @@ public class Doctor {
         this.did = did;
         this.name = name;
         this.email = email;
-        this.password = password;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        this.password = encodedPassword;
         this.patients = patients;
         this.reminders = reminders;
     }
@@ -37,7 +43,9 @@ public class Doctor {
     public Doctor(String name, String email, String password, List<Patient> patients, List<Reminder> reminders) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        this.password = encodedPassword;
         this.patients = patients;
         this.reminders = reminders;
     }
@@ -45,7 +53,9 @@ public class Doctor {
     public Doctor(String name, String email, String password) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        this.password = encodedPassword;
     }
 
     public Long getDid() {
@@ -85,7 +95,9 @@ public class Doctor {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(password);
+        this.password = encodedPassword;
     }
 
     public void setReminders(List<Reminder> reminders) {
