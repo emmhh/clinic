@@ -2,13 +2,16 @@ package com.example.clinic.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.Period;
 
 @Entity
+@DynamicUpdate
 @Table(name="Reminder")
 public class Reminder {
     @Id
@@ -22,7 +25,7 @@ public class Reminder {
     private Boolean completed;
     //    outdated is updated and managed in backend
     private Boolean outdated = false;
-    private Period duration;
+    private Duration duration;
     private Integer priority = 0;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="did")
@@ -37,14 +40,14 @@ public class Reminder {
 
     public Reminder() {
     }
-    public Reminder(String txt, Boolean completed, Boolean outdated, Period duration, Integer priority) {
+    public Reminder(String txt, Boolean completed, Boolean outdated, Duration duration, Integer priority) {
         this.txt = txt;
         this.completed = completed;
         this.outdated = outdated;
         this.duration = duration;
         this.priority = priority;
     }
-    public Reminder(Long rid, String txt, Boolean completed, Boolean outdated, Period duration, Integer priority, Doctor doctor, Patient patient) {
+    public Reminder(Long rid, String txt, Boolean completed, Boolean outdated, Duration duration, Integer priority, Doctor doctor, Patient patient) {
         this.rid = rid;
         this.txt = txt;
         this.completed = completed;
@@ -55,7 +58,7 @@ public class Reminder {
         this.patient = patient;
     }
 
-    public Reminder(String txt, Boolean completed, Boolean outdated, Period duration, Integer priority, Doctor doctor, Patient patient) {
+    public Reminder(String txt, Boolean completed, Boolean outdated, Duration duration, Integer priority, Doctor doctor, Patient patient) {
         this.txt = txt;
         this.completed = completed;
         this.outdated = outdated;
@@ -102,11 +105,11 @@ public class Reminder {
         this.outdated = outdated;
     }
 
-    public Period getDuration() {
+    public Duration getDuration() {
         return duration;
     }
 
-    public void setDuration(Period duration) {
+    public void setDuration(Duration duration) {
         this.duration = duration;
     }
 

@@ -5,33 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83685a7f-be26-4b84-a580-f49a5181b3a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/CustomDoctorDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/CustomDoctorDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/OutdatedConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/64359800-3089-450f-a64e-d55e84cb561f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/64359800-3089-450f-a64e-d55e84cb561f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/ClinicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/ClinicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/PatientConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/ReminderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/ReminderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/DoctorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/DoctorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/PatientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/ReminderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/ReminderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/DoctorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/PatientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/ReminderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/ReminderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/ClinicApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/ClinicApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/config/PatientConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/controller/DoctorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/controller/PatientController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Doctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/DoctorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/DoctorRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Reminder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/PatientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/PatientRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/ReminderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/ReminderRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/service/DoctorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/service/DoctorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/service/ReminderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/service/ReminderService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,34 +62,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/yangma/Documents/pitts/clinic",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.55172414",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "75371e7e4287a757bf721d999f0e75d5",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yangma/Documents/pitts/clinic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.55172414&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;75371e7e4287a757bf721d999f0e75d5&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ClinicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="clinic" />
@@ -119,11 +111,25 @@
       <workItem from="1676611144182" duration="75000" />
       <workItem from="1676611573550" duration="7259000" />
       <workItem from="1676649121625" duration="29966000" />
-      <workItem from="1676732343301" duration="34585000" />
+      <workItem from="1676732343301" duration="35049000" />
+      <workItem from="1676768793469" duration="12000" />
+      <workItem from="1676768830646" duration="16000" />
+      <workItem from="1676932107579" duration="1598000" />
+      <workItem from="1677167738635" duration="18057000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="org.springframework.dao.InvalidDataAccessApiUsageException" package="org.springframework.dao" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

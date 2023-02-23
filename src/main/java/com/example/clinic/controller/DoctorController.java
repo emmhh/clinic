@@ -11,10 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.Hashtable;
 import javax.print.Doc;
 import java.util.List;
@@ -54,14 +53,21 @@ public class DoctorController {
         List<Doctor> listUsers = doctorService.listDoctors();
         return listUsers;
     }
+//    TODO shoulve return the counts by patient. Not by doctor.
     @GetMapping("/dashboard/{did}")
-    public Hashtable<String, String> getDashboard(@PathVariable(value="did") Long did){
-        Hashtable<String, String> res = doctorService.getDashboardByDid(did);
+    public Hashtable<String, List<Integer>> getDashboard(@PathVariable(value="did") Long did){
+        Hashtable<String, List<Integer>> res = doctorService.getDashboardByDid(did);
         return res;
     }
-    @GetMapping("/bar/{did}")
-    public List<Integer> getBarChart(@PathVariable(value="did") Long did){
-        List<Integer> res = doctorService.getBarChartByDid(did);
+//    TODO exception handling either from front-end by not allowing users to pass in pid that is not managed by did.
+//  or from back-end to handle exceptions and return proper status back the the front end.
+    @GetMapping("/bar/{did}/{pid}")
+    public List<Integer> getBarChart(@PathVariable(value="did") Long did, @PathVariable(value="pid") Long pid){
+        List<Integer> res = doctorService.getBarChartByDidPid(did, pid);
         return res;
     }
+//    @PostMapping("/post/{did}")
+//    public String postReminder(@PathVariable(value="did") Long did){
+//
+//    }
 }

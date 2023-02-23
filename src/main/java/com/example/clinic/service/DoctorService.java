@@ -15,10 +15,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class DoctorService {
@@ -35,7 +32,7 @@ public class DoctorService {
     }
     public List<Reminder> getPatientsStatus(Long did){
         Optional<Doctor> doc = doctorRepository.findById(did);
-        List<Reminder> reminderList = reminderRepository.findALlByDid(doc);
+        List<Reminder> reminderList = reminderRepository.findALLByDid(doc);
         return reminderList;
     }
     public List<Doctor> getDoctors(){
@@ -46,31 +43,83 @@ public class DoctorService {
         List<Doctor> l = doctorRepository.findAll();
         return l;
     }
-//    Provides meta-date for dashboard
-    public Hashtable<String, String> getDashboardByDid(Long did){
-        Hashtable<String, String> res = new Hashtable<String, String>();
+//    Provides meta-date for dashboard, outdated are also considered as unfinished.
+//    {patient1: [0, 0, 0], patient2:[0, 0, 0]}
+    public Hashtable<String, List<Integer>> getDashboardByDid(Long did){
+        int lowIndex = 0;
+        int midIndex = 1;
+        int highIndex = 2;
         Optional<Doctor> doc = doctorRepository.findById(did);
         List P1 = reminderRepository.findUnfinishedCountByPriorityAndDoc(doc, Integer.valueOf(1));
         List P2 = reminderRepository.findUnfinishedCountByPriorityAndDoc(doc, Integer.valueOf(2));
         List P3 = reminderRepository.findUnfinishedCountByPriorityAndDoc(doc, Integer.valueOf(3));
-//        System.out.print(P1);
-//        System.out.print(P2);
-//        System.out.print(P3);
-        res.put("low", String.valueOf(P1));
-        res.put("mid", String.valueOf(P2));
-        res.put("hi", String.valueOf(P3));
+        System.out.print(P1);
+        System.out.print(P2);
+        System.out.print(P3);
+        Hashtable<String, List<Integer>> res = new Hashtable<String, List<Integer>>();
+//        increment the returned hashtable based on query result.
+        List<List<Integer>> PList = Arrays.asList(P1, P2, P3);
+        List<Integer> indexList = Arrays.asList(lowIndex, midIndex, highIndex);
+//        for(int i=0;i<PList.size();i++){
+//            for(int j=0;j<indexList.size();j++){
+//                res = HTConstruct(res, PList.get(i), indexList.get(j));
+//            }
+//        }
+        res = HTConstruct(res, P1, lowIndex);
+        res = HTConstruct(res, P2, midIndex);
+        res = HTConstruct(res, P3, highIndex);
+        System.out.print(res);
+        return res;
+    }
+    public Hashtable<String, List<Integer>> HTConstruct(Hashtable<String, List<Integer>> res, List P1, int lowIndex){
+        for(int i=0;i<P1.size();i++){
+//          data fetched from database : [name, count, name2, count2, ...]
+            String returned = P1.get(i).toString();
+            String[] patientInfo = returned.split(",");
+            String patientName = patientInfo[0];
+            System.out.print("#");
+            System.out.print(patientInfo[0]);
+            System.out.print("#");
+            System.out.print(patientInfo[1]);
+            System.out.print("#");
+
+            Integer new_priority = Integer.parseInt(patientInfo[1]);
+//          Add the values to the return value : {name1:[], name2:[], ...}
+            List<Integer> priorityList = res.get(patientName);
+            if (priorityList == null){
+//                priorityList = new ArrayList<Integer>(3);
+                priorityList = Arrays.asList(0, 0, 0);
+//                res.put(patientName, priorityList);
+            }
+            Integer priority = priorityList.get(lowIndex);
+            if(priority == null){
+                priorityList.set(lowIndex, new_priority);
+            } else {
+                priorityList.set(lowIndex, priority + new_priority);
+            }
+            res.put(patientName, priorityList);
+        }
         return res;
     }
 //    Provides metadata for barchart.
-    public List<Integer> getBarChartByDid(Long did){
+//  TODO exception handling:
+//    1. when doctor does not exist
+//    2. when patient does not exit / patient  is not managed by the provided doctor.
+    public List<Integer> getBarChartByDidPid(Long did, Long pid){
         Optional<Doctor> doc = doctorRepository.findById(did);
-        List<Reminder> reminderList = reminderRepository.findALlByDid(doc);
+        Optional<Patient> pat = patientRepository.findById(pid);
+        List<Reminder> reminderList = reminderRepository.findALLByDidPid(doc, pat);
+
         List<Integer> res = new ArrayList<>();
         for (int i=0;i<7;i++){
             res.add(i, 0);
         }
         for(int i=0;i<reminderList.size();i++){
             LocalDateTime today = LocalDateTime.now();
+//            only count the outdated reminders
+            if(reminderList.get(i).getOutdated() == false){
+                continue;
+            }
             for (int j=1; j<=7; j++) {
                 Timestamp ref = Timestamp.valueOf(today.minusDays(j));
                 Timestamp tmp = reminderList.get(i).getTimestamp();
