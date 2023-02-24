@@ -37,14 +37,14 @@ public class ClinicApplication {
 //			Populate data to the DB. 2000 patients, 500 doctors, Each doctor manage 40 patients.
 //			Each patient has 10-20 records each day.
 //			various priorities for each reminder are also created
-//			i -> number of docs
+//			i -> number of doctors
 			for(int i=1;i<=5;++i){
 				Doctor doc = new Doctor("doctor"+i,
 						"doctor"+i+"@gmail.com",
 						"123");
 				doctorRepository.save(doc);
 				List<Patient> patientList = new ArrayList<Patient>();
-//				j->number of patients for each doc
+//				j->number of patients for each doctor
 				for(int j=1;j<=5;j++){
 					Patient pat = new Patient("patient"+(5*(i-1)+j),
 							"patient"+(5*(i-1)+j)+"@gmail.com",
@@ -72,7 +72,7 @@ public class ClinicApplication {
 								reminder.setTimestamp(day);
 //									pat.setReminders(List.of(reminder));
 								reminderRepository.save(reminder);
-//							low priority reminder creation
+//							low priority reminder creation if it is divisible by 10
 							} else if (j%10==0) {
 								Reminder reminder = new Reminder("Exercise 15 mins!",
 										false,

@@ -14,5 +14,7 @@ import java.util.Optional;
 public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("select r from Reminder r where r.doctor=?1")
     List<Patient> getPatientsByDoctor(Optional<Doctor> doctor);
+    @Query("SELECT p FROM Patient p WHERE p.email = ?1")
+    Patient findByEmail(String email);
 }
 

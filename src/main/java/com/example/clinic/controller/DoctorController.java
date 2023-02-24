@@ -53,8 +53,6 @@ public class DoctorController {
         Hashtable<String, List<Integer>> res = doctorService.getDashboardByDid(did);
         return res;
     }
-//    TODO exception handling either from front-end by not allowing users to pass in pid that is not managed by did.
-//  or from back-end to handle exceptions and return proper status back the the front end.
     @GetMapping("/bar/{did}/{pid}")
     public List<Integer> getBarChart(@PathVariable(value="did") Long did, @PathVariable(value="pid") Long pid){
         List<Integer> res = doctorService.getBarChartByDidPid(did, pid);

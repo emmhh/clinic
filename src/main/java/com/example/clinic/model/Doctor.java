@@ -101,6 +101,10 @@ public class Doctor {
         this.password = encodedPassword;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setReminders(List<Reminder> reminders) {
         this.reminders = reminders;
     }

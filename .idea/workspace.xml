@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83685a7f-be26-4b84-a580-f49a5181b3a1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/64359800-3089-450f-a64e-d55e84cb561f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/64359800-3089-450f-a64e-d55e84cb561f.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/CustomPatientDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/CustomPatientDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/ClinicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/ClinicApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/OutdatedConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/OutdatedConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/ReminderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/ReminderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/DoctorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/ClinicApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/ClinicApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/controller/DoctorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Reminder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Reminder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/ReminderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/ReminderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/service/DoctorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/service/DoctorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/CustomDoctorDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/CustomDoctorDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/CustomDoctorDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clinic/service/CustomDoctorDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/model/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/PatientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clinic/repository/PatientRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +112,7 @@
       <workItem from="1676768793469" duration="12000" />
       <workItem from="1676768830646" duration="16000" />
       <workItem from="1676932107579" duration="1598000" />
-      <workItem from="1677167738635" duration="28073000" />
+      <workItem from="1677167738635" duration="33939000" />
     </task>
     <servers />
   </component>
