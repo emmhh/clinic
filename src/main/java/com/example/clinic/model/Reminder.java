@@ -22,7 +22,7 @@ public class Reminder {
 //    , insertable = true, updatable = true
     @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp timestamp;
-    private Boolean completed;
+    private Boolean completed = false;
     //    outdated is updated and managed in backend
     private Boolean outdated = false;
     private Duration duration;
@@ -52,6 +52,14 @@ public class Reminder {
         this.txt = txt;
         this.completed = completed;
         this.outdated = outdated;
+        this.duration = duration;
+        this.priority = priority;
+        this.doctor = doctor;
+        this.patient = patient;
+    }
+
+    public Reminder(String txt, Duration duration, Integer priority, Doctor doctor, Patient patient) {
+        this.txt = txt;
         this.duration = duration;
         this.priority = priority;
         this.doctor = doctor;

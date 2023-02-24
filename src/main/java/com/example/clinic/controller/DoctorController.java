@@ -6,25 +6,25 @@ import com.example.clinic.repository.DoctorRepository;
 import com.example.clinic.repository.ReminderRepository;
 import com.example.clinic.service.DoctorService;
 import com.example.clinic.service.PatientService;
+import com.example.clinic.service.ReminderService;
 import jdk.jfr.Frequency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
+import java.rmi.ServerException;
+import java.util.*;
 import javax.print.Doc;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path="/doctor")
 public class DoctorController {
     private DoctorService doctorService;
     private DoctorRepository doctorRepository;
-
+    private ReminderService reminderService;
     private ReminderRepository reminderRepository;
 
     @Autowired
@@ -38,11 +38,6 @@ public class DoctorController {
     public List<Doctor> getDoctors(){
         return doctorService.getDoctors();
     }
-//    @GetMapping(value = "/{did}")
-//    public ResponseEntity<List<Reminder>> getData(@PathVariable(value="did") Long did) {
-//        List<Reminder> res = doctorService.getPatientsStatus(did);
-//        return new ResponseEntity<>(res, HttpStatus.OK);
-//    }
     @GetMapping(value = "/{did}")
     public List<Reminder> getData(@PathVariable(value="did") Long did) {
         List<Reminder> reminderList = doctorService.getPatientsStatus(did);
@@ -53,7 +48,6 @@ public class DoctorController {
         List<Doctor> listUsers = doctorService.listDoctors();
         return listUsers;
     }
-//    TODO shoulve return the counts by patient. Not by doctor.
     @GetMapping("/dashboard/{did}")
     public Hashtable<String, List<Integer>> getDashboard(@PathVariable(value="did") Long did){
         Hashtable<String, List<Integer>> res = doctorService.getDashboardByDid(did);
@@ -66,8 +60,9 @@ public class DoctorController {
         List<Integer> res = doctorService.getBarChartByDidPid(did, pid);
         return res;
     }
-//    @PostMapping("/post/{did}")
-//    public String postReminder(@PathVariable(value="did") Long did){
-//
-//    }
+    @PostMapping(path = "/create_reminder")
+    public ResponseEntity<Reminder> createReminder(@RequestBody Map<String, String> json) {
+        Reminder reminder = doctorService.saveReminder(json);
+        return new ResponseEntity<>(reminder, HttpStatus.CREATED);
+    }
 }

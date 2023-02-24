@@ -16,11 +16,12 @@ public class OutdatedConfig {
     }
 //    second, minute, hour, day of month, month, day(s) of week
 //    "0 0 8-10 * * *" = 8, 9 and 10 o'clock of every day.
+//    TODO change it back to one update per day.
 //    @Scheduled(cron = "0 0 0 * * ?") //daily update
     @Scheduled(cron = "0/10 * * * * ?") //update every 10 seconds
     public void scheduledUpdateOutdated() {
         int count = reminderService.updateAllOutdatedAttribute();
         System.out.println(
-                "Updated" + count + " the reminder outdated attribute - " + System.currentTimeMillis() / 1000);
+                "Updated " + count + " the reminder outdated attribute - " + System.currentTimeMillis() / 1000);
     }
 }

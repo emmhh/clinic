@@ -9,10 +9,13 @@ import com.example.clinic.repository.ReminderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.Local;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.print.Doc;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -45,6 +48,7 @@ public class DoctorService {
     }
 //    Provides meta-date for dashboard, outdated are also considered as unfinished.
 //    {patient1: [0, 0, 0], patient2:[0, 0, 0]}
+//    TODO change the data structure for sorted result.
     public Hashtable<String, List<Integer>> getDashboardByDid(Long did){
         int lowIndex = 0;
         int midIndex = 1;
@@ -134,5 +138,32 @@ public class DoctorService {
             }
         }
         return res;
+    }
+//  {txt: , duration_hours: , priority: , did: , pid: }
+    public Reminder saveReminder(Map<String, String> json){
+        String text = json.get("txt");
+        String durationStr = json.get("duration_hours");
+        String priorityStr = json.get("priority");
+        String didStr = json.get("did");
+        String pidStr = json.get("pid");
+        LocalDateTime nowLDT = LocalDateTime.now();
+        Timestamp now = Timestamp.valueOf(nowLDT);
+        Optional<Doctor> docFetch = doctorRepository.findById(Long.parseLong(didStr));
+        Optional<Patient> patFetch = patientRepository.findById(Long.parseLong(pidStr));
+        Reminder reminder = new Reminder();
+        docFetch.ifPresentOrElse(
+                (doc) -> {patFetch.ifPresentOrElse(
+                        (pat) -> {reminder.setTxt(text);
+                                    reminder.setDuration(Duration.ofHours(Integer.parseInt(priorityStr)));
+                                    reminder.setPriority(Integer.parseInt(priorityStr));
+                                    reminder.setDoctor(doc);
+                                    reminder.setPatient(pat);
+                                    reminder.setTimestamp(now);
+                                    reminderRepository.save(reminder);
+                                        System.out.println("new reminder saved to database!");},
+                        () -> { System.out.println(
+                            "Failed to save reminder because patient does not exist!"); });},
+                () -> { System.out.println("Failed to save reminder because doctor does not exist!"); });
+        return reminder;
     }
 }

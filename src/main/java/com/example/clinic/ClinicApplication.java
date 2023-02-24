@@ -62,7 +62,7 @@ public class ClinicApplication {
 							Timestamp day = new Timestamp(time);
 //							high priority reminder creation
 							if (j%2==1){
-								Reminder reminder = new Reminder("Exercise 15 mins!",
+								Reminder reminder = new Reminder("Stay Hydrated!!!",
 										false,
 										false,
 										Duration.ofHours(1),
@@ -86,7 +86,7 @@ public class ClinicApplication {
 								reminderRepository.save(reminder);
 //							medium priority reminders creation
 							} else{
-								Reminder reminder = new Reminder("Exercise 15 mins!",
+								Reminder reminder = new Reminder("Call the doctor for updates!",
 										false,
 										false,
 										Duration.ofHours(2),

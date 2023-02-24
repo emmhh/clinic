@@ -1123,7 +1123,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="306" parent="303" name="did">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1160,7 +1160,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>UK_jdtgexk368pq6d2yb3neec59d</UnderlyingIndexName>
     </key>
     <column id="314" parent="304" name="pid">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>26</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1211,7 +1211,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>UK_bawli8xm92f30ei6x9p3h8eju</UnderlyingIndexName>
     </key>
     <column id="325" parent="305" name="rid">
-      <AutoIncrement>606</AutoIncrement>
+      <AutoIncrement>3026</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

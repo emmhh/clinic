@@ -4,8 +4,10 @@ import com.example.clinic.model.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.clinic.model.Reminder;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.net.Inet4Address;
 import java.util.List;
@@ -23,6 +25,10 @@ public interface ReminderRepository extends JpaRepository<Reminder, Long> {
     Integer findUnfinishedCountByPriorityAndPatient(Optional<Patient> pat, Integer priority);
     @Query("select r from Reminder r where r.patient=?1")
     List<Reminder> findAllByPatient(Optional<Patient> pat);
+    @Modifying
+    @Transactional
+    @Query(value="update Reminder r set r.completed='true' where r.rid = :rid", nativeQuery=true)
+    void setCompleted(@Param("rid")Long rid);
 //    @Modifying
 //    @Query("update Reminder r set r.outdated='true' where r.rid=?1")
 //    void setOutdated(Long rid);
